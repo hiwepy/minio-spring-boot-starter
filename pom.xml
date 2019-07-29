@@ -372,6 +372,7 @@
         <maven-surefire-plugin.vertsion>2.22.1</maven-surefire-plugin.vertsion>
 		<maven-nexus-staging-plugin.version>1.6.8</maven-nexus-staging-plugin.version>
  		<minio.version>6.0.8</minio.version>
+ 		<findbugs-annotations.version>3.0.1</findbugs-annotations.version>
 	</properties>
 	
 	<dependencies>
@@ -433,6 +434,17 @@
 		    <groupId>io.minio</groupId>
 		    <artifactId>minio</artifactId>
 		    <version>${minio.version}</version>
+		    <exclusions>
+				<exclusion>
+					<groupId>com.google.code.findbugs</groupId>
+					<artifactId>annotations</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+		    <groupId>com.google.code.findbugs</groupId>
+		    <artifactId>annotations</artifactId>
+		    <version>${findbugs-annotations.version}</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
 		
 	</dependencies>
