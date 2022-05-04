@@ -15,17 +15,14 @@
  */
 package io.minio.spring.boot;
 
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(MinioProperties.PREFIX)
+@Data
 public class MinioProperties {
 
 	public static final String PREFIX = "minio";
-	
-	/**
-	 * Whether Enable MinIO.
-	 */
-	private boolean enabled = false;
 	
 	/**
 	 * Request endpoint. Endpoint is an URL, domain name, IPv4 or IPv6 address.<pre>
@@ -67,61 +64,5 @@ public class MinioProperties {
 	 */
 	boolean secure;
 
-	public boolean isEnabled() {
-		return enabled;
-	}
-
-	public String getEndpoint() {
-		return endpoint;
-	}
-
-	public int getPort() {
-		return port;
-	}
-
-	public String getAccessKey() {
-		return accessKey;
-	}
-
-	public String getSecretKey() {
-		return secretKey;
-	}
-
-	public String getRegion() {
-		return region;
-	}
-
-	public boolean isSecure() {
-		return secure;
-	}
-
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
-	}
-
-	public void setEndpoint(String endpoint) {
-		this.endpoint = endpoint;
-	}
-
-	public void setPort(int port) {
-		this.port = port;
-	}
-
-	public void setAccessKey(String accessKey) {
-		this.accessKey = accessKey;
-	}
-
-	public void setSecretKey(String secretKey) {
-		this.secretKey = secretKey;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-	}
-
-	public void setSecure(boolean secure) {
-		this.secure = secure;
-	}
-	
 }
 

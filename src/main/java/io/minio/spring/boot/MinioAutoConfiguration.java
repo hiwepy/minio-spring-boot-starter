@@ -13,25 +13,38 @@ import io.minio.errors.MinioException;
 
 @Configuration
 @ConditionalOnClass(MinioClient.class)
-@ConditionalOnProperty(prefix = MinioProperties.PREFIX, value = "enabled", havingValue = "true")
 @EnableConfigurationProperties({ MinioProperties.class })
 public class MinioAutoConfiguration{
 
 	@Bean
 	@ConditionalOnMissingBean
 	public MinioClient minioClient(MinioProperties properties) throws MinioException {
-		
 		if(properties.getPort() > 0) {
 			if(StringUtils.hasText(properties.getRegion())) {
-				return new MinioClient(properties.getEndpoint(), properties.getPort(), properties.getAccessKey(), properties.getSecretKey(), properties.getRegion(), properties.isSecure());
+				// Create a minioClient with the MinIO server playground, its access key and secret key.
+				return MinioClient.builder()
+						.endpoint(properties.getEndpoint(), properties.getPort(), properties.isSecure())
+						.credentials(properties.getAccessKey(), properties.getSecretKey())
+						.region(properties.getRegion())
+						.build();
 			}
-			return new MinioClient(properties.getEndpoint(), properties.getPort(), properties.getAccessKey(), properties.getSecretKey(), properties.isSecure());
+			return MinioClient.builder()
+					.endpoint(properties.getEndpoint(), properties.getPort(), properties.isSecure())
+					.credentials(properties.getAccessKey(), properties.getSecretKey())
+					.build();
 		}
 		
 		if(StringUtils.hasText(properties.getRegion())) {
-			return new MinioClient(properties.getEndpoint(), properties.getAccessKey(), properties.getSecretKey(), properties.getRegion());
+			return MinioClient.builder()
+					.endpoint(properties.getEndpoint())
+					.credentials(properties.getAccessKey(), properties.getSecretKey())
+					.region(properties.getRegion())
+					.build();
 		}
-		return new MinioClient(properties.getEndpoint(), properties.getAccessKey(), properties.getSecretKey(), properties.isSecure());
+		return MinioClient.builder()
+				.endpoint(properties.getEndpoint())
+				.credentials(properties.getAccessKey(), properties.getSecretKey())
+				.build();
 	}
 
 }

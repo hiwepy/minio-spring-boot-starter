@@ -65,7 +65,6 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>${maven-compiler-plugin.version}</version>
 					<configuration>
-						<defaultLibBundleDir>lib</defaultLibBundleDir>
 						<source>${java.version}</source>
 						<target>${java.version}</target>
 						<encoding>${project.build.sourceEncoding}</encoding>
@@ -146,9 +145,7 @@
 					<artifactId>maven-source-plugin</artifactId>
 					<version>${maven-source-plugin.version}</version>
 					<configuration>
-						<testFailureIgnore>true</testFailureIgnore>
 						<attach>true</attach>
-						<encoding>${project.build.sourceEncoding}</encoding>
 					</configuration>
 					<executions>
 						<execution>
@@ -190,7 +187,6 @@
 					<artifactId>maven-jar-plugin</artifactId>
 					<version>${maven-jar-plugin.version}</version>
 					<configuration>
-						<encoding>${project.build.sourceEncoding}</encoding>
 						<skipIfEmpty>true</skipIfEmpty>
 						<archive>
 							<manifest>
@@ -371,12 +367,41 @@
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
         <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
 		<maven-nexus-staging-plugin.version>1.6.8</maven-nexus-staging-plugin.version>
- 		<minio.version>6.0.11</minio.version>
+ 		<minio.version>8.3.9</minio.version>
  		<findbugs-annotations.version>3.0.1</findbugs-annotations.version>
 	</properties>
-	
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- https://mvnrepository.com/artifact/io.minio/minio -->
+			<dependency>
+				<groupId>io.minio</groupId>
+				<artifactId>minio</artifactId>
+				<version>${minio.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>com.google.code.findbugs</groupId>
+						<artifactId>annotations</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>com.google.code.findbugs</groupId>
+				<artifactId>annotations</artifactId>
+				<version>${findbugs-annotations.version}</version><!--$NO-MVN-MAN-VER$-->
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
-		
+
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
 		<!-- Java Servlet API -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -433,18 +458,10 @@
 		<dependency>
 		    <groupId>io.minio</groupId>
 		    <artifactId>minio</artifactId>
-		    <version>${minio.version}</version>
-		    <exclusions>
-				<exclusion>
-					<groupId>com.google.code.findbugs</groupId>
-					<artifactId>annotations</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 		    <groupId>com.google.code.findbugs</groupId>
 		    <artifactId>annotations</artifactId>
-		    <version>${findbugs-annotations.version}</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
 		
 	</dependencies>
