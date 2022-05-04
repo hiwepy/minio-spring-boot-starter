@@ -459,10 +459,6 @@
 		    <groupId>io.minio</groupId>
 		    <artifactId>minio</artifactId>
 		</dependency>
-		<dependency>
-		    <groupId>com.google.code.findbugs</groupId>
-		    <artifactId>annotations</artifactId>
-		</dependency>
 		
 	</dependencies>
 
