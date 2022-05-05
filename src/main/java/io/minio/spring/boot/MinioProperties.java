@@ -64,5 +64,10 @@ public class MinioProperties {
 	 */
 	boolean secure;
 
+	/**
+	 * the partSize, minimum allowed 5MiB, maximum allowed 5GiB, default 0
+	 */
+	int partSize;
+
 }
 
