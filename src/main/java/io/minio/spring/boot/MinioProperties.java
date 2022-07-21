@@ -15,6 +15,7 @@
  */
 package io.minio.spring.boot;
 
+import io.minio.ObjectWriteArgs;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
@@ -67,7 +68,7 @@ public class MinioProperties {
 	/**
 	 * the partSize, minimum allowed 5MiB, maximum allowed 5GiB, default 0
 	 */
-	int partSize;
+	long partSize = ObjectWriteArgs.MIN_MULTIPART_SIZE;
 
 }
 
