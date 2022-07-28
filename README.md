@@ -12,7 +12,7 @@ Spring Boot Starter For Minio
 <dependency>
 	<groupId>com.github.hiwepy</groupId>
 	<artifactId>minio-spring-boot-starter</artifactId>
-	<version>${project.version}</version>
+	<version>1.0.3.RELEASE</version>
 </dependency>
 ```
 
