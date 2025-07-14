@@ -13,7 +13,7 @@
 	<groupId>com.github.hiwepy</groupId>
 	<artifactId>minio-spring-boot-starter</artifactId>
 	<description>Spring Boot Starter For Minio</description>
-	<version>3.3.x.20241003.RELEASE</version>
+	<version>3.3.x.20250712-SNAPSHOT</version>
 	<name>${project.groupId}:${project.artifactId}</name>
 	<url>https://github.com/hiwepy/${project.artifactId}</url>
 	<packaging>jar</packaging>
@@ -384,7 +384,7 @@
 		<maven-surefire-plugin.version>3.5.0</maven-surefire-plugin.version>
 		<maven-war-plugin.version>3.4.0</maven-war-plugin.version>
 		<!-- Dependency versions -->
-		<minio.version>8.5.13</minio.version>
+		<minio.version>8.5.17</minio.version>
  		<findbugs-annotations.version>3.0.1</findbugs-annotations.version>
 		<findbugs-jsr305.version>3.0.2</findbugs-jsr305.version>
 	</properties>
