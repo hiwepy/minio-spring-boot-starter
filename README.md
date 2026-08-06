@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # minio-spring-boot-starter
 Spring Boot Starter For Minio
 
@@ -20,3 +21,27 @@ Spring Boot Starter For Minio
 
 [https://github.com/vindell/spring-boot-starter-samples/tree/master/spring-boot-sample-shiro-kisso](https://github.com/vindell/spring-boot-starter-samples/tree/master/spring-boot-sample-shiro-kisso "spring-boot-sample-shiro-kisso")
 
+=======
+# minio-spring-boot-starter
+Spring Boot Starter For Minio
+
+### 说明
+
+
+ > 基于 minio  的 Spring Boot Starter 实现
+
+### Maven
+
+``` xml
+<dependency>
+	<groupId>io.github.easy4j</groupId>
+	<artifactId>minio-spring-boot-starter</artifactId>
+	<version>${project.version}</version>
+</dependency>
+```
+
+### Sample
+
+[https://github.com/vindell/spring-boot-starter-samples/tree/master/spring-boot-sample-shiro-kisso](https://github.com/vindell/spring-boot-starter-samples/tree/master/spring-boot-sample-shiro-kisso "spring-boot-sample-shiro-kisso")
+
+>>>>>>> Stashed changes
