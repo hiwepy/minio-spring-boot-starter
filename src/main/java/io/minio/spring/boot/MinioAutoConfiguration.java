@@ -14,6 +14,7 @@ import io.minio.errors.MinioException;
 
 @Configuration
 @EnableConfigurationProperties({ MinioProperties.class })
+/**\n * Auto-configuration for MinioAutoConfiguration.\n *\n * @author [@Loong Wan](https://github.com/loong10k)\n * @since 1.0.0\n */
 public class MinioAutoConfiguration{
 
 	@Bean
