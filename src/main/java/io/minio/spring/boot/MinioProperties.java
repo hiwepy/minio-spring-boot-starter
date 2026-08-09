@@ -15,59 +15,108 @@
  */
 package io.minio.spring.boot;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+/**
+ * Configuration properties for Minio.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 @ConfigurationProperties(MinioProperties.PREFIX)
-@Data
 public class MinioProperties {
 
 	public static final String PREFIX = "minio";
-	
+
 	/**
-	 * Request endpoint. Endpoint is an URL, domain name, IPv4 or IPv6 address.<pre>
-	 *              Valid endpoints:
-	 *              * https://s3.amazonaws.com
-	 *              * https://s3.amazonaws.com/
-	 *              * https://play.min.io:9000
-	 *              * http://play.min.io:9010/
-	 *              * localhost
-	 *              * localhost.localdomain
-	 *              * play.min.io
-	 *              * 127.0.0.1
-	 *              * 192.168.1.60
-	 *              * ::1</pre>
+	 * Request endpoint. Endpoint is an URL, domain name, IPv4 or IPv6 address.
 	 */
-	String endpoint; 
-	
+	private String endpoint;
+
 	/**
-	 * Valid port.  It should be in between 1 and 65535.  Unused if endpoint is an URL.
+	 * Valid port. It should be in between 1 and 65535. Unused if endpoint is an URL.
 	 */
-	int port = -1; 
-	
+	private int port = -1;
+
 	/**
 	 * Access key to access service in endpoint.
 	 */
-	String accessKey;
+	private String accessKey;
+
 	/**
 	 * Secret key to access service in endpoint.
 	 */
-	String secretKey; 
-	
+	private String secretKey;
+
 	/**
 	 * Region name to access service in endpoint.
 	 */
-	String region;
-	
+	private String region;
+
 	/**
 	 * If true, access endpoint using HTTPS else access it using HTTP.
 	 */
-	boolean secure;
+	private boolean secure;
 
 	/**
 	 * the partSize, minimum allowed 5MiB, maximum allowed 5GiB, default 0
 	 */
-	int partSize;
+	private int partSize;
+
+	public String getEndpoint() {
+		return endpoint;
+	}
+
+	public void setEndpoint(String endpoint) {
+		this.endpoint = endpoint;
+	}
+
+	public int getPort() {
+		return port;
+	}
+
+	public void setPort(int port) {
+		this.port = port;
+	}
+
+	public String getAccessKey() {
+		return accessKey;
+	}
+
+	public void setAccessKey(String accessKey) {
+		this.accessKey = accessKey;
+	}
+
+	public String getSecretKey() {
+		return secretKey;
+	}
+
+	public void setSecretKey(String secretKey) {
+		this.secretKey = secretKey;
+	}
+
+	public String getRegion() {
+		return region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+
+	public boolean isSecure() {
+		return secure;
+	}
+
+	public void setSecure(boolean secure) {
+		this.secure = secure;
+	}
+
+	public int getPartSize() {
+		return partSize;
+	}
+
+	public void setPartSize(int partSize) {
+		this.partSize = partSize;
+	}
 
 }
-
