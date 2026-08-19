@@ -16,6 +16,12 @@ import io.minio.errors.MinioException;
 @EnableConfigurationProperties({ MinioProperties.class })
 /**\n * Auto-configuration for MinioAutoConfiguration.\n *\n * @author <a href="https://github.com/loong10k">Loong Wan</a>\n * @since 1.0.0\n */
 public class MinioAutoConfiguration{
+	/**
+	 * <p>Minio client.</p>
+	 * @param properties the properties
+	 * @return the minio client
+	 * @throws MinioException if an error occurs
+	 */
 
 	@Bean
 	@ConditionalOnMissingBean

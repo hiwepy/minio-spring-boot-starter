@@ -62,58 +62,75 @@ public class MinioProperties {
 	 * the partSize, minimum allowed 5MiB, maximum allowed 5GiB, default 0
 	 */
 	private int partSize;
+	/** Gets the endpoint. */
 
 	public String getEndpoint() {
 		return endpoint;
 	}
+	/** Sets the endpoint. */
 
 	public void setEndpoint(String endpoint) {
 		this.endpoint = endpoint;
 	}
+	/** Gets the port. */
 
 	public int getPort() {
 		return port;
 	}
+	/** Sets the port. */
 
 	public void setPort(int port) {
 		this.port = port;
 	}
+	/** Gets the access key. */
 
 	public String getAccessKey() {
 		return accessKey;
 	}
+	/** Sets the access key. */
 
 	public void setAccessKey(String accessKey) {
 		this.accessKey = accessKey;
 	}
+	/** Gets the secret key. */
 
 	public String getSecretKey() {
 		return secretKey;
 	}
+	/** Sets the secret key. */
 
 	public void setSecretKey(String secretKey) {
 		this.secretKey = secretKey;
 	}
+	/** Gets the region. */
 
 	public String getRegion() {
 		return region;
 	}
+	/** Sets the region. */
 
 	public void setRegion(String region) {
 		this.region = region;
 	}
+	/**
+	 * <p>Is secure.</p>
+	 * @return the boolean
+	 */
 
 	public boolean isSecure() {
 		return secure;
 	}
+	/** Sets the secure. */
 
 	public void setSecure(boolean secure) {
 		this.secure = secure;
 	}
+	/** Gets the part size. */
 
 	public int getPartSize() {
 		return partSize;
 	}
+	/** Sets the part size. */
 
 	public void setPartSize(int partSize) {
 		this.partSize = partSize;
